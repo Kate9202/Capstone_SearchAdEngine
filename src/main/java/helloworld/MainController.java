@@ -11,10 +11,15 @@ import helloworld.UserRepository;
 //@Controller //means this class is a controller
 
 @RestController
-@RequestMapping(path = "/demo")
+//@RequestMapping(path = "/")
 public class MainController {
     @Autowired //get the bean "UserRepository"
     private UserRepository userRepository;
+
+    @GetMapping(path = "/")
+    public @ResponseBody String welcomePage(){
+        return "Greetings from Spring Boot!";
+    }
 
     @GetMapping(path="/add")
     public @ResponseBody String addNewUser (@RequestParam String name,
@@ -38,6 +43,5 @@ public class MainController {
     public @ResponseBody String getAmazonMessage() {
         AmazonAPI amazonAPI = new AmazonAPI();
         return amazonAPI.callAmazonAPI();
-//        return null;
     }
 }
