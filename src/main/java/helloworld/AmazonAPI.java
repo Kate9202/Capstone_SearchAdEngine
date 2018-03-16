@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -38,7 +39,7 @@ public class AmazonAPI {
         params.put("SearchIndex", "All");
         params.put("Keywords", "nike");
         params.put("ResponseGroup", "Images,ItemAttributes,Offers");
-
+        //TODO: change to config file to protect API keys
         requestUrl = helper.sign(params);
 
 //        System.out.println("Signed URL: \"" + requestUrl + "\"");
